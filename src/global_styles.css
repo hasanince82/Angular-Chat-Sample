@@ -1,0 +1,45 @@
+:root {
+  --body-bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  --messager-bg: #fff;
+  --border: 1px solid #ddd;
+  --left-msg-bg: #ececec;
+  --right-msg-bg: #579ffb;
+  --dot-color: #9c9b9b;
+  --chat-header-color: #fff;
+  --chat-header-bg-color: #7C72E5;
+  --send-button:#3e8bd3;
+  --send-button-hover: #3a91e2;
+  --chat-bg: #fcfcfe;
+  --msg-input: #ddd;
+  --msg-input-area: #eee;
+  --msg-img-bg: #ddd;
+  --scroll-track: #ddd;
+  --scroll-thumb: #bdbdbd;
+  --msg-bubble: #ececec;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  background-image: var(--body-bg);
+  font-family: 'Open Sans', Tahoma, Georgia, Times, 'Times New Roman', serif, Courier, monospace, sans-serif;
+  height: 100vh;
+  /*display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: var(--body-bg);
+  font-family: Helvetica, sans-serif;*/
+}

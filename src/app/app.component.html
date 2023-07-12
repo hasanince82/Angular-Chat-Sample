@@ -1,0 +1,22 @@
+<section class="messager">
+<header class="messager-header">
+  <div class="messager-header-title">
+    <i class="fas fa-comment-alt"></i> Ang Chat
+  </div>
+  <div class="messager-header-options">
+    <span><i class="fas fa-cog"></i></span>
+  </div>
+</header>
+
+<main class="messager-chat" *ngIf="chatStarted">
+  <ng-template ngFor let-message [ngForOf]="messages">
+  <div [innerHTML]="sanitizeHTML(message)"></div>
+  </ng-template>
+</main>
+
+<div class="messager-inputarea">
+  <input type="text" class="messager-input" placeholder="Start Chat..." 
+  [(ngModel)]="queryText" (keyup.enter)="generateQuery()">
+  <button type="button" class="messager-send-btn" (click)="generateQuery()" [disabled]="sendWait">Send</button>
+</div>
+</section>
