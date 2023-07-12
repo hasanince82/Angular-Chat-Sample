@@ -1,3 +1,4 @@
 # Angular-Chat-Sample
 
-👋 I aimed to adapt and run a project developed with JavaScript and CSS that I have been based on as Angular-Cli project. 
+👋 This project was first developed using Javascript and Css, I based this project on. 
+I aimed to port it to Angular-Cli project and run it and the result was good.
