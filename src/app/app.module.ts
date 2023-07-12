@@ -4,10 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { ScrollToBottomDirective } from './scroll-to-bottom-directive.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ScrollToBottomDirective
   ],
   imports: [
     CommonModule,

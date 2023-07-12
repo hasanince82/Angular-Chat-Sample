@@ -1,5 +1,6 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { ScrollToBottomDirective } from './scroll-to-bottom-directive.directive';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,9 @@ import { DomSanitizer } from '@angular/platform-browser';
   encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent implements OnInit {
+
+  @ViewChild(ScrollToBottomDirective)
+  scroll: ScrollToBottomDirective|undefined;
   
   chatStarted : boolean = false;
   messages : string[] = [];
@@ -46,6 +50,11 @@ export class AppComponent implements OnInit {
     return this.messagesText[randomIndex];
   }
 
+  keyUp() {
+    if(!this.sendWait)
+      this.generateQuery();
+  }
+
   generateQuery() {
     if(this.queryText == undefined || this.queryText == "") {
       alert("Please enter the message");
@@ -62,6 +71,7 @@ export class AppComponent implements OnInit {
       class : "right-msg",
       loading : ""
     };
+    
     const mes = this.messageCreate(message);
     this.messages.push(mes);
     this.sendWait = true;

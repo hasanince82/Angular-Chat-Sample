@@ -8,7 +8,7 @@
   </div>
 </header>
 
-<main class="messager-chat" *ngIf="chatStarted">
+<main #messagesContainer class="messager-chat" *ngIf="chatStarted" [scrollTop]="messagesContainer.scrollHeight">
   <ng-template ngFor let-message [ngForOf]="messages">
   <div [innerHTML]="sanitizeHTML(message)"></div>
   </ng-template>
@@ -16,7 +16,7 @@
 
 <div class="messager-inputarea">
   <input type="text" class="messager-input" placeholder="Start Chat..." 
-  [(ngModel)]="queryText" (keyup.enter)="generateQuery()">
+  [(ngModel)]="queryText" (keyup.enter)="keyUp()">
   <button type="button" class="messager-send-btn" (click)="generateQuery()" [disabled]="sendWait">Send</button>
 </div>
 </section>
