@@ -2,4 +2,3 @@
 *.css linguist-detectable=false
 *.html linguist-detectable=false
 *.js linguist-detectable=false
-*.ts linguist-language=AngularCLi-TypeScript
