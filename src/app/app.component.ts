@@ -96,7 +96,7 @@ export class AppComponent implements OnInit {
     setTimeout(() => {
       let updateMes = this.messages[this.messages.length - 1];
       updateMes.loading = "";
-      updateMes.text = "this.getRandomMessage()";
+      updateMes.text = this.getRandomMessage();
       this.sendWait = false;
     }, 5000); // 5000 ms (5 saniye) süreyle ekletildiğini varsayalım
   }
